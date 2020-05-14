@@ -17,4 +17,8 @@ class DishesController extends Controller
     {
         return view('menu.dishes_edit');
     }
+    public function detail()
+    {
+        return view('menu.detail');
+    }
 }

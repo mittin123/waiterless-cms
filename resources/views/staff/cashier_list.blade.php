@@ -6,7 +6,7 @@
             <div class="card ">
                 <div class="card-header">
                     <h4 style="display: inline-block;" class="card-title"> Staff</h4>
-                    <a href="" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Staff</a>
+                    <a href="{{ route('staff.add')  }}" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Staff</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -14,19 +14,13 @@
                             <thead class=" text-primary">
                             <tr>
                                 <th>
-                                Image
-                                </th>
-                                <th>
                                 Name
                                 </th>
                                 <th>
-                                Country
+                                UserName
                                 </th>
                                 <th>
-                                City
-                                </th>
-                                <th class="text-center">
-                                Salary
+                                Last Login
                                 </th>
                                 <th class="text-center">
                                 Action
@@ -36,22 +30,16 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                    Dakota Rice
+                                    Duong Quang Anh
                                     </td>
                                     <td>
-                                    Dakota Rice
+                                    anhdq1
                                     </td>
                                     <td>
-                                    Niger
-                                    </td>
-                                    <td>
-                                    Oud-Turnhout
-                                    </td>
-                                    <td class="text-center">
-                                    $36,738
+                                    14/05/2020 1:17:00 AM
                                     </td>
                                     <td class="td-actions text-center">
-                                        <a href="" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="{{ route('staff.edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">

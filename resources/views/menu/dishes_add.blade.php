@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('edit'), 'pageSlug' => 'customer'])
+@extends('layouts.app', ['page' => __('add'), 'pageSlug' => 'customer'])
 
 @section('content')
     <div class="row">
@@ -25,14 +25,10 @@
                                 <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
                                 @include('alerts.feedback', ['field' => 'email'])
                             </div>
-                            <label>{{ __('Image') }}</label>
-                            <br/>
-                                <input type="file" name="photo" id="input-picture" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
-                                <img id="output" src="https://teamtech24.com/foodhati/foodhatiAdmin/assets/img/foodimg/default-food-image.jpg" width="100" height="100">
 
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>
+                        <button type="submit" class="btn btn-fill btn-primary">{{ __('Add') }}</button>
                     </div>
                 </form>
             </div>

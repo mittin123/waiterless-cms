@@ -1,11 +1,11 @@
-@extends('layouts.app', ['page' => __('category_edit'), 'pageSlug' => 'menu'])
+@extends('layouts.app', ['page' => __('category_add'), 'pageSlug' => 'menu'])
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">{{ __('Edit Category') }}</h5>
+                    <h5 class="title">{{ __('Add Category') }}</h5>
                 </div>
                 <form method="post" action="" autocomplete="off">
                     <div class="card-body">
@@ -22,7 +22,7 @@
 
                             <div class="form-group{{ $errors->has('parentID') ? ' has-danger' : '' }}">
                                 <label>{{ __('Parent ID') }}</label>
-                                <select id="inputState" class="form-control">
+                                <select id="parentID" name="parentID" class="form-control">
                                     <option selected>Choose parent category</option>
                                     <option class="dropdown-item">Bun</option>
                                     <option class="dropdown-item">Pho</option>
@@ -33,7 +33,7 @@
                             </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>
+                        <button type="submit" class="btn btn-fill btn-primary">{{ __('Add') }}</button>
                     </div>
                 </form>
             </div>

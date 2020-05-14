@@ -6,7 +6,7 @@
             <div class="card ">
                 <div class="card-header">
                     <h4 style="display: inline-block;" class="card-title"> Category</h4>
-                    <a href="" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Category</a>
+                    <a href="{{ route('menu.category_add')  }}" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Category</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -14,19 +14,10 @@
                             <thead class=" text-primary">
                             <tr>
                                 <th>
-                                Image
+                                Category ID
                                 </th>
                                 <th>
-                                Name
-                                </th>
-                                <th>
-                                Country
-                                </th>
-                                <th>
-                                City
-                                </th>
-                                <th class="text-center">
-                                Salary
+                                Category Name
                                 </th>
                                 <th class="text-center">
                                 Action
@@ -36,22 +27,13 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                    Dakota Rice
+                                    1
                                     </td>
                                     <td>
-                                    Dakota Rice
-                                    </td>
-                                    <td>
-                                    Niger
-                                    </td>
-                                    <td>
-                                    Oud-Turnhout
-                                    </td>
-                                    <td class="text-center">
-                                    $36,738
+                                    Bun
                                     </td>
                                     <td class="td-actions text-center">
-                                        <a href="" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="{{ route('menu.category_edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">

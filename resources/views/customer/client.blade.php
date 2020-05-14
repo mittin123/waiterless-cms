@@ -14,19 +14,22 @@
                             <thead class=" text-primary">
                             <tr>
                                 <th>
-                                Image
-                                </th>
-                                <th>
                                 Name
                                 </th>
                                 <th>
-                                Country
+                                Email
                                 </th>
                                 <th>
-                                City
+                                Phone
+                                </th>
+                                <th>
+                                Total Payment
                                 </th>
                                 <th class="text-center">
-                                Salary
+                                Vip Level
+                                </th>
+                                <th>
+                                Last Login
                                 </th>
                                 <th class="text-center">
                                 Action
@@ -36,24 +39,24 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                    Dakota Rice
+                                    Duong Quang Anh
                                     </td>
                                     <td>
-                                    Dakota Rice
+                                    pr0ovjp1999@gmail.com
                                     </td>
                                     <td>
-                                    Niger
+                                    01234567899
                                     </td>
                                     <td>
-                                    Oud-Turnhout
+                                    5.000.000 vnd
                                     </td>
                                     <td class="text-center">
-                                    $36,738
+                                    15
+                                    </td>
+                                    <td>
+                                    04/05/2020 1:46:00 AM
                                     </td>
                                     <td class="td-actions text-center">
-                                        <a href="{{ route('customer.edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                                            <i class="tim-icons icon-settings"></i>
-                                        </a>
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
                                             <i class="tim-icons icon-simple-remove"></i>
                                         </a>

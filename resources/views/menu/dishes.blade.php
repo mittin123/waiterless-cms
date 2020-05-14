@@ -20,13 +20,13 @@
                                 Name
                                 </th>
                                 <th>
-                                Country
+                                Description
                                 </th>
                                 <th>
-                                City
+                                Category
                                 </th>
                                 <th class="text-center">
-                                Salary
+                                Price
                                 </th>
                                 <th class="text-center">
                                 Action
@@ -36,19 +36,19 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                    Dakota Rice
+                                        <img width="200" src="https://beptruong.edu.vn/wp-content/uploads/2018/06/bun-rieu-cua.jpg" class="">
                                     </td>
                                     <td>
-                                    Dakota Rice
+                                    Boon Real Cua
                                     </td>
                                     <td>
-                                    Niger
+                                    Real bun of Hanoi
                                     </td>
                                     <td>
-                                    Oud-Turnhout
+                                    Bun
                                     </td>
                                     <td class="text-center">
-                                    $36,738
+                                    35.000 vnd
                                     </td>
                                     <td class="td-actions text-center">
                                         <a href="" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
