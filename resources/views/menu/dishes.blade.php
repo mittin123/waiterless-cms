@@ -22,12 +22,14 @@
                                 <th>
                                 Category
                                 </th>
-                                <th class="text-center">
+                                <th>
                                 Price
                                 </th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">
-                                Action
+                                Image
                                 </th>
+                                <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,23 +48,14 @@
                                     <td>
                                         <img width="200" src="https://beptruong.edu.vn/wp-content/uploads/2018/06/bun-rieu-cua.jpg" class="">
                                     </td>
-                                    <td>
-                                    Boon Real Cua
-                                    </td>
-                                    <td>
-                                    Real bun of Hanoi
-                                    </td>
-                                    <td>
-                                    Bun
-                                    </td>
-                                    <td class="text-center">
-                                    35.000 vnd
-                                    </td>
+                                    
+                                   
+                                    
                                     <td class="td-actions text-center">
                                         <a href="{{ route('menu.detail')  }}" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
                                             <i class="tim-icons icon-single-02"></i>
                                         </a>
-                                        <a href="{{ route('menu.dishes_edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="{{ route('menu.dishes_edit',$item->id)  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">

@@ -23,12 +23,7 @@
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <label>{{ __('Description') }}</label>
                                 <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ $data->description }}">
-                                @include('alerts.feedback', ['field' => 'email'])
-                            </div>
-
-                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                <label>{{ __('Price') }}</label>
-                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ $data->price }}">
+                                @include('alerts.feedback', ['field' => 'description'])
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
@@ -59,11 +54,6 @@
                                     @endif
                                 </select>
                             </div>
-                            <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
-                                <label>{{ __('Description') }}</label>
-                                <input type="text" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('Description') }}" value="{{ old('description', auth()->user()->description) }}">
-                                @include('alerts.feedback', ['field' => 'description'])
-                            </div>
 
                             <div class="form-group{{ $errors->has('category') ? ' has-danger' : '' }}">
                                 <label>{{ __('Parent ID') }}</label>
@@ -79,7 +69,7 @@
 
                             <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
                                 <label>{{ __('Price') }}</label>
-                                <input type="number" name="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('price', auth()->user()->price) }}">
+                                <input type="number" name="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ $data->price }}">
                                 @include('alerts.feedback', ['field' => 'price'])
                             </div>
 
