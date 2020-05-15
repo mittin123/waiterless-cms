@@ -6,15 +6,15 @@
             <div class="card ">
                 <div class="card-header">
                     <h4 style="display: inline-block;" class="card-title"> Dishes</h4>
-                    <a href="" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Dishes</a>
+                    <a href="{{ route('menu.dishes_add')  }}" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Dishes</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table tablesorter " id="">
                             <thead class=" text-primary">
                             <tr>
-                                <th>
-                                Name
+                                <th calss="text-center">
+                                Image
                                 </th>
                                 <th>
                                 Description
@@ -22,11 +22,8 @@
                                 <th>
                                 Category
                                 </th>
-                                <th>
-                                Price
-                                </th>
                                 <th class="text-center">
-                                Status
+                                Price
                                 </th>
                                 <th class="text-center">
                                 Action
@@ -46,12 +43,26 @@
                                         @else
                                             Active
                                         @endif
+                                    <td>
+                                        <img width="200" src="https://beptruong.edu.vn/wp-content/uploads/2018/06/bun-rieu-cua.jpg" class="">
+                                    </td>
+                                    <td>
+                                    Boon Real Cua
+                                    </td>
+                                    <td>
+                                    Real bun of Hanoi
+                                    </td>
+                                    <td>
+                                    Bun
+                                    </td>
+                                    <td class="text-center">
+                                    35.000 vnd
                                     </td>
                                     <td class="td-actions text-center">
-                                        <a href="" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
+                                        <a href="{{ route('menu.detail')  }}" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
                                             <i class="tim-icons icon-single-02"></i>
                                         </a>
-                                        <a href="edit/{{$item->id}}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="{{ route('menu.dishes_edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">

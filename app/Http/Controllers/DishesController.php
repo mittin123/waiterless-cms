@@ -28,4 +28,8 @@ class DishesController extends Controller
     {
         return view('menu.detail');
     }
+    public function detail()
+    {
+        return view('menu.detail');
+    }
 }

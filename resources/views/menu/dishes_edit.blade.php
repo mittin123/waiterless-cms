@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('edit'), 'pageSlug' => 'customer'])
+@extends('layouts.app', ['page' => __('dishes_edit'), 'pageSlug' => 'menu'])
 
 @section('content')
     <div class="row">
@@ -59,6 +59,30 @@
                                     @endif
                                 </select>
                             </div>
+                            <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
+                                <label>{{ __('Description') }}</label>
+                                <input type="text" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('Description') }}" value="{{ old('description', auth()->user()->description) }}">
+                                @include('alerts.feedback', ['field' => 'description'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('category') ? ' has-danger' : '' }}">
+                                <label>{{ __('Parent ID') }}</label>
+                                <select id="category" name="category" class="form-control">
+                                    <option selected>Choose parent category</option>
+                                    <option class="dropdown-item">Bun</option>
+                                    <option class="dropdown-item">Pho</option>
+                                    <option class="dropdown-item">Chao</option>
+                                    <option class="dropdown-item">Com</option>
+                                </select>
+                                @include('alerts.feedback', ['field' => 'category'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
+                                <label>{{ __('Price') }}</label>
+                                <input type="number" name="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('price', auth()->user()->price) }}">
+                                @include('alerts.feedback', ['field' => 'price'])
+                            </div>
+
                             <label>{{ __('Image') }}</label>
                             <br/>
                                 <input type="file" name="photo" id="input-picture" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">

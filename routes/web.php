@@ -53,13 +53,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'dishes'], function () {
         Route::get('', ['as' => 'menu.dishes', 'uses' => 'DishesController@dishes']);
-        Route::get('edit/{id}', ['as' => 'dishes.edit', 'uses' => 'DishesController@edit']);
-        Route::get('add', ['as' => 'dishes.add', 'uses' => 'DishesController@add']);
+        Route::get('edit/{id}', ['as' => 'menu.dishes.edit', 'uses' => 'DishesController@edit']);
+        Route::get('add', ['as' => 'menu.dishes_add', 'uses' => 'DishesController@add']);
+        Route::get('detail',['as' => 'menu.detail', 'uses' => 'DishesController@detail']);
     });
-	
-});
-
-Route::group(['middleware' => 'auth'], function () {
 	
 });
 
@@ -71,8 +68,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('client', ['as' => 'customer.client', 'uses' => 'ClientController@customer']);
-	Route::get('edit', ['as' => 'customer.edit', 'uses' => 'ClientController@edit']);
-	Route::get('add', ['as' => 'customer.add', 'uses' => 'ClientController@add']);
 });
 
 

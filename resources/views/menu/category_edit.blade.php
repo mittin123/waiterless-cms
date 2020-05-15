@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('edit'), 'pageSlug' => 'customer'])
+@extends('layouts.app', ['page' => __('category_edit'), 'pageSlug' => 'menu'])
 
 @section('content')
     <div class="row">
@@ -16,6 +16,7 @@
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
+
                                 <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{$data->category_name}}">
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
@@ -40,13 +41,21 @@
                                     @endif
                                     
                                 </select>
-                                @include('alerts.feedback', ['field' => 'email'])
+                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}">
+                                @include('alerts.feedback', ['field' => 'name'])
                             </div>
-                            <label>{{ __('Image') }}</label>
-                            <br/>
-                                <input type="file" name="photo" id="input-picture" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
-                                <img id="output" src="https://teamtech24.com/foodhati/foodhatiAdmin/assets/img/foodimg/default-food-image.jpg" width="100" height="100">
 
+                            <div class="form-group{{ $errors->has('parentID') ? ' has-danger' : '' }}">
+                                <label>{{ __('Parent ID') }}</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose parent category</option>
+                                    <option class="dropdown-item">Bun</option>
+                                    <option class="dropdown-item">Pho</option>
+                                    <option class="dropdown-item">Chao</option>
+                                    <option class="dropdown-item">Com</option>
+                                </select>
+                                @include('alerts.feedback', ['field' => 'parentID'])
+                            </div>
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>
