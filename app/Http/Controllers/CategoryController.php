@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -9,9 +10,10 @@ class CategoryController extends Controller
     {
         return view('menu.category');
     }
-    public function edit()
+    public function edit($id)
     {
-        return view('menu.category_edit');
+        $data = DB::table('Categories')->where('category_id',$id)->first();
+        return view('menu.category_edit',compact('data'));
     }
     public function add()
     {

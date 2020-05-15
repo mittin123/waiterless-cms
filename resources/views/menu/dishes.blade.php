@@ -14,19 +14,19 @@
                             <thead class=" text-primary">
                             <tr>
                                 <th>
-                                Image
-                                </th>
-                                <th>
                                 Name
                                 </th>
                                 <th>
-                                Country
+                                Description
                                 </th>
                                 <th>
-                                City
+                                Category
+                                </th>
+                                <th>
+                                Price
                                 </th>
                                 <th class="text-center">
-                                Salary
+                                Status
                                 </th>
                                 <th class="text-center">
                                 Action
@@ -34,27 +34,24 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($data as $item)
                                 <tr>
-                                    <td>
-                                    Dakota Rice
-                                    </td>
-                                    <td>
-                                    Dakota Rice
-                                    </td>
-                                    <td>
-                                    Niger
-                                    </td>
-                                    <td>
-                                    Oud-Turnhout
-                                    </td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->description}}</td>
+                                    <td>{{$item->category_name}}</td>
+                                    <td>{{$item->price}}</td>
                                     <td class="text-center">
-                                    $36,738
+                                        @if($item->status==0)
+                                            Disabled
+                                        @else
+                                            Active
+                                        @endif
                                     </td>
                                     <td class="td-actions text-center">
                                         <a href="" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
                                             <i class="tim-icons icon-single-02"></i>
                                         </a>
-                                        <a href="" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="edit/{{$item->id}}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
@@ -62,6 +59,7 @@
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
