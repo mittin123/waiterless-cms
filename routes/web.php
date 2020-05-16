@@ -62,21 +62,22 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('detail/{id}',['as' => 'menu.detail', 'uses' => 'DishesController@detail']);
         Route::get('delete/{id}',['as' => 'menu.delete', 'uses' => 'DishesController@delete']);
     });
+
+    Route::group(['prefix' => 'cashier_list'], function(){
+        Route::get('', ['as' => 'staff.cashier_list', 'uses' => 'StaffController@staff']);
+        Route::get('edit/{id}', ['as' => 'staff.edit', 'uses' => 'StaffController@edit']);
+        Route::post('edit/{id}', ['as' => 'staff.post_edit', 'uses' => 'StaffController@postEdit']);
+        Route::get('add', ['as' => 'staff.add', 'uses' => 'StaffController@add']);
+        Route::post('add', ['as' => 'staff.post_add', 'uses' => 'StaffController@postAdd']);
+        Route::get('delete/{id}', ['as' => 'staff.delete', 'uses' => 'StaffController@delete']);
+    });
+
+    Route::group(['prefix' => 'client'], function(){
+        Route::get('', ['as' => 'customer.client', 'uses' => 'ClientController@customer']);
+        Route::get('add', ['as' => 'customer.client', 'uses' => 'ClientController@add']);
+    });
 	
 });
-
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('cashier_list', ['as' => 'staff.cashier_list', 'uses' => 'StaffController@staff']);
-	Route::get('edit', ['as' => 'staff.edit', 'uses' => 'StaffController@edit']);
-	Route::get('add', ['as' => 'staff.add', 'uses' => 'StaffController@add']);
-});
-
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('client', ['as' => 'customer.client', 'uses' => 'ClientController@customer']);
-});
-
-
-
 
 Auth::routes();
 

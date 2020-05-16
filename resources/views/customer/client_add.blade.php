@@ -1,11 +1,11 @@
-@extends('layouts.app', ['page' => __('add'), 'pageSlug' => 'staff'])
+@extends('layouts.app', ['page' => __('client_add'), 'pageSlug' => 'customer'])
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">{{ __('Add Profile') }}</h5>
+                    <h5 class="title">{{ __('Add Customer') }}</h5>
                 </div>
                 <form method="post" action="" autocomplete="off">
                     <div class="card-body">
@@ -19,16 +19,18 @@
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
 
-                            <div class="form-group{{ $errors->has('username') ? ' has-danger' : '' }}">
-                                <label>{{ __('Username') }}</label>
-                                <input type="text" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}">
-                                @include('alerts.feedback', ['field' => 'username'])
+                            <div class="form-group{{ $errors->has('parent_id') ? ' has-danger' : '' }}">
+                                <label>{{ __('Parent ID') }}</label>
+                                
+                                @include('alerts.feedback', ['field' => 'parent_id'])
                             </div>
-                            
-                            <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                <label>{{ __('Password') }}</label>
-                                <input type="text" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}">
-                                @include('alerts.feedback', ['field' => 'password'])
+
+                            <div class="form-group">
+                                <label>{{ __('Status') }}</label>
+                                <select name="status" id="status" class="form-control">
+                                        <option value="0">Disable</option>
+                                        <option value="1" selected>Active</option>
+                                </select>
                             </div>
                     </div>
                     <div class="card-footer">

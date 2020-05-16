@@ -28,25 +28,27 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($data as $item)
                                 <tr>
                                     <td>
-                                    Duong Quang Anh
+                                    {{$item->name}}
                                     </td>
                                     <td>
-                                    anhdq1
+                                    {{$item->username}}
                                     </td>
                                     <td>
-                                    14/05/2020 1:17:00 AM
+                                    {{date('d/m/yy h:i:s',$item->last_login+25200)}}
                                     </td>
                                     <td class="td-actions text-center">
-                                        <a href="{{ route('staff.edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="{{ route('staff.edit', $item->id)  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
-                                        <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                                        <a href="{{ route('staff.delete', $item->id) }}" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
                                             <i class="tim-icons icon-simple-remove"></i>
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('edit'), 'pageSlug' => 'customer'])
+@extends('layouts.app', ['page' => __('edit'), 'pageSlug' => 'staff'])
 
 @section('content')
     <div class="row">
@@ -10,25 +10,24 @@
                 <form method="post" action="" autocomplete="off">
                     <div class="card-body">
                             @csrf
-                            @method('put')
 
                             @include('alerts.success')
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
-                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}">
+                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ $data->name }}">
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
 
                             <div class="form-group{{ $errors->has('username') ? ' has-danger' : '' }}">
                                 <label>{{ __('Email address') }}</label>
-                                <input type="text" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Username') }}" value="{{ old('username', auth()->user()->username) }}">
+                                <input type="text" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Username') }}" value="{{ $data->username }}">
                                 @include('alerts.feedback', ['field' => 'username'])
                             </div>
                             
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <label>{{ __('Password') }}</label>
-                                <input type="text" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="{{ old('password', auth()->user()->username) }}">
+                                <input type="text" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" disabled>
                                 @include('alerts.feedback', ['field' => 'password'])
                             </div>
                     </div>

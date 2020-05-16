@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Categories;
-use App\Http\Requeest;
+use App\Http\Requests;
 
 use Illuminate\Http\Request;
 

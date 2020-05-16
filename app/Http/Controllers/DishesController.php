@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Dishes;
-use App\Http\Requeest;
+use App\Http\Requests;
 
 use Illuminate\Http\Request;
 
@@ -20,7 +20,7 @@ class DishesController extends Controller
         ->get();
         return view('menu.dishes',compact('data'));
     }
-    
+
     public function Add()
     {
         $data = DB::table('Categories')->select('Categories.*')->get();
