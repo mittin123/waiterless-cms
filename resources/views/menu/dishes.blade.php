@@ -52,13 +52,13 @@
                                    
                                     
                                     <td class="td-actions text-center">
-                                        <a href="{{ route('menu.detail')  }}" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
+                                        <a href="{{ route('menu.detail',$item->id)  }}" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
                                             <i class="tim-icons icon-single-02"></i>
                                         </a>
                                         <a href="{{ route('menu.dishes_edit',$item->id)  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
-                                        <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                                        <a href="{{ route('menu.delete', $item->id)}}" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
                                             <i class="tim-icons icon-simple-remove"></i>
                                         </a>
                                     </td>

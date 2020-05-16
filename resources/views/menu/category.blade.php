@@ -25,22 +25,24 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($data as $item)
                                 <tr>
                                     <td>
-                                    1
+                                    {{$item->category_id}}
                                     </td>
                                     <td>
-                                    Bun
+                                    {{$item->category_name}}
                                     </td>
                                     <td class="td-actions text-center">
-                                        <a href="{{ route('menu.category_edit')  }}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                        <a href="{{route('menu.category_edit',$item->category_id)}}" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                                             <i class="tim-icons icon-settings"></i>
                                         </a>
-                                        <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                                        <a href="{{route('menu.category_delete',$item->category_id)}}" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
                                             <i class="tim-icons icon-simple-remove"></i>
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

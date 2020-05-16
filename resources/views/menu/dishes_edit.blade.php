@@ -7,11 +7,10 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Edit Dishes') }}</h5>
                 </div>
-                <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
+                <form method="POST" action="" autocomplete="off">
                     <div class="card-body">
                             @csrf
-                            @method('put')
-
+                    
                             @include('alerts.success')
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
@@ -20,17 +19,17 @@
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                            <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                 <label>{{ __('Description') }}</label>
-                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ $data->description }}">
+                                <input type="text" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ $data->description }}">
                                 @include('alerts.feedback', ['field' => 'description'])
                             </div>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                            <div class="form-group{{ $errors->has('discount') ? ' has-danger' : '' }}">
                                 <label>{{ __('Discount') }}</label>
-                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ $data->discount }}">
+                                <input type="text" name="discount" class="form-control{{ $errors->has('discount') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ $data->discount }}">
                             </div>
-                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                            <div class="form-group{{ $errors->has('cate') ? ' has-danger' : '' }}">
                                 <label>{{ __('Category') }}</label>
                                 <select name="cate" id="cate" class="form-control">
                                 @foreach($category_list as $item)
@@ -80,7 +79,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>
+                        <button type="submit" name ="action" class="btn btn-fill btn-primary">{{ __('Save') }}</button>
                     </div>
                 </form>
             </div>

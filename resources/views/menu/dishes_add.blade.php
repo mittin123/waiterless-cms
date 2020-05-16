@@ -7,11 +7,9 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Edit Profile') }}</h5>
                 </div>
-                <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
+                <form method="post" action="" autocomplete="off">
                     <div class="card-body">
                             @csrf
-                            @method('put')
-
                             @include('alerts.success')
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
@@ -25,28 +23,38 @@
                                 <input type="text" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}">
                                 @include('alerts.feedback', ['field' => 'description'])
                             </div>
-
-                            <div class="form-group{{ $errors->has('category') ? ' has-danger' : '' }}">
-                                <label>{{ __('Parent ID') }}</label>
-                                <select id="category" name="category" class="form-control">
-                                    <option selected>Choose parent category</option>
-                                    <option class="dropdown-item">Bun</option>
-                                    <option class="dropdown-item">Pho</option>
-                                    <option class="dropdown-item">Chao</option>
-                                    <option class="dropdown-item">Com</option>
+                            
+                            <div class="form-group{{ $errors->has('cate') ? ' has-danger' : '' }}">
+                                <label>{{ __('Category') }}</label>
+                                <select name="cate" id="cate" class="form-control">
+                                @foreach($data as $item)
+                                    <option value="{{$item->category_id}}">{{$item->category_name}}</option>
+                                @endforeach
                                 </select>
-                                @include('alerts.feedback', ['field' => 'category'])
                             </div>
-
+                            <div class="form-group">
+                                <label>{{ __('Status') }}</label>
+                                <select name="status" id="status" class="form-control">  
+                                        <option value="0">Disable</option>
+                                        <option value="1" selected>Active</option>
+                                </select>
+                                @include('alerts.feedback', ['field' => 'status'])
+                            </div>
                             <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
                                 <label>{{ __('Price') }}</label>
-                                <input type="number" name="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}">
+                                <input type="number" name="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" value="0">
                                 @include('alerts.feedback', ['field' => 'price'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('discount') ? ' has-danger' : '' }}">
+                                <label>{{ __('Discount') }}</label>
+                                <input type="number" name="discount" class="form-control{{ $errors->has('discount') ? ' is-invalid' : '' }}" value="0">
+                                @include('alerts.feedback', ['field' => 'discount'])
                             </div>
 
                             <label>{{ __('Image') }}</label>
                             <br/>
-                            <input type="file" name="photo" id="input-picture" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                            <input type="file" name="image" id="input-picture" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
                             <img id="output" src="https://teamtech24.com/foodhati/foodhatiAdmin/assets/img/foodimg/default-food-image.jpg" width="100" height="100">
                     </div>
                     <div class="card-footer">

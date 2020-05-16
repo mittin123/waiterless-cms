@@ -48,14 +48,19 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('', ['as' => 'menu.category', 'uses' => 'CategoryController@category']);
         Route::get('edit/{id}', ['as' => 'menu.category_edit', 'uses' => 'CategoryController@edit']);
         Route::post('edit/{id}', ['as' => 'menu.post_edit', 'uses' => 'CategoryController@postEdit']);
-        Route::get('add', ['as' => 'menu.category_add', 'uses' => 'CategoryController@add']);
+        Route::get('delete/{id}', ['as' => 'menu.category_delete', 'uses' => 'CategoryController@delete']);
+        Route::get('add', ['as' => 'menu.category_add', 'uses' => 'CategoryController@Add']);
+        Route::post('add', ['as' => 'menu.category_post_add', 'uses' => 'CategoryController@postAdd']);
     });
 
     Route::group(['prefix' => 'dishes'], function () {
         Route::get('', ['as' => 'menu.dishes', 'uses' => 'DishesController@dishes']);
         Route::get('edit/{id}', ['as' => 'menu.dishes_edit', 'uses' => 'DishesController@edit']);
-        Route::get('add', ['as' => 'menu.dishes_add', 'uses' => 'DishesController@add']);
-        Route::get('detail',['as' => 'menu.detail', 'uses' => 'DishesController@detail']);
+        Route::post('edit/{id}', ['as' => 'menu.dishes_post_edit', 'uses' => 'DishesController@postEdit']);
+        Route::get('add', ['as' => 'menu.dishes_add', 'uses' => 'DishesController@Add']);
+        Route::post('add', ['as' => 'menu.dishes_post_add', 'uses' => 'DishesController@postAdd']);
+        Route::get('detail/{id}',['as' => 'menu.detail', 'uses' => 'DishesController@detail']);
+        Route::get('delete/{id}',['as' => 'menu.delete', 'uses' => 'DishesController@delete']);
     });
 	
 });
