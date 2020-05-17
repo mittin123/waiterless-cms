@@ -19,18 +19,16 @@
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
 
-                            <div class="form-group{{ $errors->has('parent_id') ? ' has-danger' : '' }}">
-                                <label>{{ __('Parent ID') }}</label>
-                                
-                                @include('alerts.feedback', ['field' => 'parent_id'])
+                            <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
+                                <label>{{ __('Phone') }}</label>
+                                <input type="text" name="phone" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}">
+                                @include('alerts.feedback', ['field' => 'phone'])
                             </div>
 
-                            <div class="form-group">
-                                <label>{{ __('Status') }}</label>
-                                <select name="status" id="status" class="form-control">
-                                        <option value="0">Disable</option>
-                                        <option value="1" selected>Active</option>
-                                </select>
+                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <label>{{ __('Email') }}</label>
+                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}">
+                                @include('alerts.feedback', ['field' => 'email'])
                             </div>
                     </div>
                     <div class="card-footer">

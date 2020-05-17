@@ -73,8 +73,9 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::group(['prefix' => 'client'], function(){
-        Route::get('', ['as' => 'customer.client', 'uses' => 'ClientController@customer']);
-        Route::get('add', ['as' => 'customer.client', 'uses' => 'ClientController@add']);
+        Route::get('', ['as' => 'customer.client', 'uses' => 'CustomerController@customer']);
+        Route::get('add', ['as' => 'customer.add', 'uses' => 'CustomerController@add']);
+        Route::post('add', ['as' => 'customer.post_add', 'uses' => 'CustomerController@postAdd']);
     });
 	
 });

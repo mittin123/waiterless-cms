@@ -6,7 +6,7 @@
             <div class="card ">
                 <div class="card-header">
                     <h4 style="display: inline-block;" class="card-title"> Customer</h4>
-                    <a href="" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Customer</a>
+                    <a href="{{route('customer.add')}}" style="float: right; display: inline-block;" type="button" class="btn btn-primary">Add Customer</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -37,24 +37,27 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($data as $item)
                                 <tr>
                                     <td>
-                                    Duong Quang Anh
+                                    {{$item->name}}
                                     </td>
                                     <td>
-                                    pr0ovjp1999@gmail.com
+                                    {{$item->email}}
                                     </td>
                                     <td>
-                                    01234567899
+                                    {{$item->phone}}
                                     </td>
                                     <td>
-                                    5.000.000 vnd
+                                    {{
+                                        number_format($item->total_payment,0,',','.')
+                                    }}
                                     </td>
                                     <td class="text-center">
-                                    15
+                                    {{$item->vip_level}}
                                     </td>
                                     <td>
-                                    04/05/2020 1:46:00 AM
+                                    {{date('d/m/yy h:i:s',$item->last_login)}}
                                     </td>
                                     <td class="td-actions text-center">
                                         <a href="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
@@ -62,6 +65,7 @@
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
